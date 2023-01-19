@@ -15,7 +15,7 @@ const create = async () => {
         {flag: 'wx'} // if file already exists, there will be an error
       );
   } catch(error) {
-        throw Error('FS operation failed');
+        throw new Error('FS operation failed');
   }
 };
 
