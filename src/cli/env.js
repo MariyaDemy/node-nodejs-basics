@@ -1,5 +1,8 @@
 const parseEnv = () => {
-    // Write your code here 
+    const envVars = process.env;
+    console.log(envVars);
+    //filter
+    // for cycle
 };
 
 parseEnv();
