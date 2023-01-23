@@ -1,8 +1,10 @@
 const parseEnv = () => {
-    const envVars = process.env;
-    console.log(envVars);
-    //filter
-    // for cycle
+  const envArr = [];
+  for (const [key, value] of Object.entries(process.env)) {
+    if (key.startsWith("RSS_")) envArr.push(`${key}=${value}`);
+  }
+  const resultString = envArr.join("; ");
+  console.log(resultString);
 };
 
 parseEnv();
