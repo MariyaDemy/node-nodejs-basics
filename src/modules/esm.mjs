@@ -35,7 +35,7 @@ const myServer = createServerHttp((_, res) => {
 
 const PORT = 3000;
 
-console.log(unknownObject);
+console.log(JSON.parse(JSON.stringify(unknownObject)).default); // to remove [Module: null prototype] in console
 
 myServer.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
