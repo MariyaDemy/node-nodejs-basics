@@ -1,6 +1,13 @@
+import { getDirName } from "../../fileInfo.js";
+import { join } from "path";
+import { fork } from "node:child_process";
+
+const __dirname = getDirName(import.meta.url);
+const childProcessPath = join(__dirname, "files", "script.js");
+
 const spawnChildProcess = async (args) => {
-    // Write your code here
+  //Docs: By default, pipes for stdin, stdout, and stderr are established between the parent Node.js process and the spawned subprocess
+  fork(childProcessPath, args);
 };
 
-// Put your arguments in function call to test this functionality
-spawnChildProcess( /* [someArgument1, someArgument2, ...] */);
+spawnChildProcess(["arg1", "arg2"]);
