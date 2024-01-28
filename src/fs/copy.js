@@ -15,7 +15,7 @@ const copy = async () => {
       await readdir(srcFolderPath),
     ]);
     for (const file of promisesResult[1]) {
-      await copyFile(srcFolderPath + "\\" + file, destFolderPath + "\\" + file);
+      await copyFile(join(srcFolderPath, file), join(destFolderPath, file));
     }
   } catch (error) {
     throw new Error("FS operation failed");
